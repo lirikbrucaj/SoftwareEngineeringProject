@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "444327014259",
+    "firebase_url": "https://softwareengineeringproje-219f0.firebaseio.com",
+    "project_id": "softwareengineeringproje-219f0",
+    "storage_bucket": "softwareengineeringproje-219f0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:444327014259:android:1981838a7b14fd4a2c5f06",
+        "android_client_info": {
+          "package_name": "lirik.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "444327014259-5ak1ks0lh2fjh3nijg2lli28grkb8jib.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "lirik.myapplication",
+            "certificate_hash": "b7c699cf38eec798471c4c13e9794fa5c8aaa2a1"
+          }
+        },
+        {
+          "client_id": "444327014259-gmod2qtvjdf1626fgki9bsuv1svhaetg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC13_8T3wZsV874KMAjEPpQiqUgFMtu1Lw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "444327014259-gmod2qtvjdf1626fgki9bsuv1svhaetg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
