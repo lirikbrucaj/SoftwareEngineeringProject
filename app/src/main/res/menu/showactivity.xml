@@ -7,8 +7,18 @@
         android:orderInCategory="100"
         app:showAsAction="never" />
 
-    <item android:id="@+id/action_read_data"
-        android:title="Read step data"
+    <item android:id="@+id/action_update_data"
+        android:title="@string/action_update_session"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/action_delete_data"
+        android:title="@string/action_delete_session"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/chart"
+        android:title="Line Graph"
         android:orderInCategory="100"
         app:showAsAction="never" />
 
