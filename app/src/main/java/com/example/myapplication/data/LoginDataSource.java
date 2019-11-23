@@ -4,8 +4,6 @@ import com.example.myapplication.data.model.LoggedInUser;
 
 import java.io.IOException;
 
-import com.example.myapplication.data.model.LoggedInUser;
-
 /**
  * Class that handles authentication w/ login credentials and retrieves user information.
  */

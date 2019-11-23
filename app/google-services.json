@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "1057881779388",
-    "firebase_url": "https://testcs398.firebaseio.com",
-    "project_id": "testcs398",
-    "storage_bucket": "testcs398.appspot.com"
+    "project_number": "384875315402",
+    "firebase_url": "https://brancs398project.firebaseio.com",
+    "project_id": "brancs398project",
+    "storage_bucket": "brancs398project.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1057881779388:android:b475ad07f7a9fed928f4b9",
+        "mobilesdk_app_id": "1:384875315402:android:b3217b4d08299bd01ef433",
         "android_client_info": {
           "package_name": "com.example.myapplication"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1057881779388-1spc4kl7ptg2qnk4kddvh1d3or0ibrdd.apps.googleusercontent.com",
+          "client_id": "384875315402-brhfhgue5qb5uhfej5963opop5nt0n6f.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBl6yqiK6uzo_tMbFeVm2JcKewNy03wMPA"
+          "current_key": "AIzaSyCb0PxPaZ-bUt1aDda0YAX95nrxGFT3oXU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1057881779388-1spc4kl7ptg2qnk4kddvh1d3or0ibrdd.apps.googleusercontent.com",
+              "client_id": "384875315402-brhfhgue5qb5uhfej5963opop5nt0n6f.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
