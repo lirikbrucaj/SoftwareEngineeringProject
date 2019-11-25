@@ -47,6 +47,7 @@ dependencies {
     implementation 'com.google.android.gms:play-services-games:18.0.1'
     implementation 'com.google.android.gms:play-services-safetynet:17.0.0'
     implementation 'com.google.android.gms:play-services-wallet:18.0.0'
+    implementation 'com.github.lecho:hellocharts-library:1.5.8@aar'
     implementation 'com.google.android.gms:play-services-wearable:17.0.0'
 
 }
