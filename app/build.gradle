@@ -49,5 +49,10 @@ dependencies {
     implementation 'com.google.android.gms:play-services-wallet:18.0.0'
     implementation 'com.github.lecho:hellocharts-library:1.5.8@aar'
     implementation 'com.google.android.gms:play-services-wearable:17.0.0'
+    implementation 'com.google.firebase:firebase-analytics:17.2.1'
+    implementation 'com.google.firebase:firebase-auth:19.1.0'
+    implementation 'com.google.firebase:firebase-core:17.2.1'
 
 }
+
+apply plugin: 'com.google.gms.google-services'
