@@ -20,13 +20,7 @@ package="lirik.myapplication">
     </activity>
     <activity android:name="lirik.myapplication.ui.login.RegistrationActivity" />
     <activity android:name="lirik.myapplication.ui.login.DashboardActivity"></activity>
-    <activity android:name=".ShowActivityData">
-            <intent-filter>
-                
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+    <activity android:name=".ShowActivityData"></activity>
 </application>
 
 </manifest>
