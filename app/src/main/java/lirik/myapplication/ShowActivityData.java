@@ -47,6 +47,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -60,6 +62,7 @@ import static java.text.DateFormat.getTimeInstance;
  * with Google Play Services and how to properly represent data in a {@link DataSet}.
  */
 public class ShowActivityData extends AppCompatActivity {
+    private ArrayList<Integer> personalStepData = new ArrayList<>();
 
     public static final String TAG = "BasicHistoryApi";
     // Identifier to identify the sign in activity.
@@ -273,8 +276,8 @@ public class ShowActivityData extends AppCompatActivity {
         DateFormat dateFormat = getTimeInstance();
 
         for (DataPoint dp : dataSet.getDataPoints()) {
-            Log.i(TAG, "Data point:");
-            Log.i(TAG, "\tType: " + dp.getDataType().getName());
+            //Log.i(TAG, "Data point:");
+            //Log.i(TAG, "\tType: " + dp.getDataType().getName());
             Log.i(TAG, "\tStart: " + dateFormat.format(dp.getStartTime(TimeUnit.MILLISECONDS)));
             Log.i(TAG, "\tEnd: " + dateFormat.format(dp.getEndTime(TimeUnit.MILLISECONDS)));
             for (Field field : dp.getDataType().getFields()) {
@@ -446,52 +449,68 @@ public class ShowActivityData extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     public void showLineGraph(){
-       LineChartView lineChartView;
-        String[] axisData = {"Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept",
-                "Oct", "Nov", "Dec"};
-        int[] yAxisData = {50, 20, 15, 30, 20, 60, 15, 40, 45, 10, 90, 18};
+        LineChartView lineChartView;
+        String[] axisData = {"15-20", "20-30", "30-40", "40-50", "50-60", "60-70", "70-inf"};
+        int[] mAxisData = {5697,6100,5746,5532,5332,4971,4244}; // female data
+        int[] yAxisData = {4581,4824,4368,4202,4021,3660,3095};// male data
 
 
-            lineChartView = findViewById(R.id.chart);
 
-            List yAxisValues = new ArrayList();
-            List axisValues = new ArrayList();
+        lineChartView = findViewById(R.id.chart);
+
+        List yAxisValues = new ArrayList();
+        List MalesAxisValues = new ArrayList();
+        List axisValues = new ArrayList();
+        List personalAxisValues = new ArrayList();
 
 
-            Line line = new Line(yAxisValues).setColor(Color.parseColor("#9C27B0"));
+        Line line = new Line(yAxisValues).setColor(Color.parseColor("#9C27B0"));
 
-            for (int i = 0; i < axisData.length; i++) {
-                axisValues.add(i, new AxisValue(i).setLabel(axisData[i]));
-            }
-
-            for (int i = 0; i < yAxisData.length; i++) {
-                yAxisValues.add(new PointValue(i, yAxisData[i]));
-            }
-
-            List lines = new ArrayList();
-            lines.add(line);
-
-            LineChartData data = new LineChartData();
-            data.setLines(lines);
-
-            Axis axis = new Axis();
-            axis.setValues(axisValues);
-            axis.setTextSize(16);
-            axis.setTextColor(Color.parseColor("#03A9F4"));
-            data.setAxisXBottom(axis);
-
-            Axis yAxis = new Axis();
-            yAxis.setName("Sales in millions");
-            yAxis.setTextColor(Color.parseColor("#03A9F4"));
-            yAxis.setTextSize(16);
-            data.setAxisYLeft(yAxis);
-
-            lineChartView.setLineChartData(data);
-            Viewport viewport = new Viewport(lineChartView.getMaximumViewport());
-            viewport.top = 110;
-            lineChartView.setMaximumViewport(viewport);
-            lineChartView.setCurrentViewport(viewport);
+        for (int i = 0; i < axisData.length; i++) {
+            axisValues.add(i, new AxisValue(i).setLabel(axisData[i]));
         }
+
+        for (int i = 0; i < yAxisData.length; i++) {
+            yAxisValues.add(new PointValue(i, yAxisData[i]));
+            MalesAxisValues.add(new PointValue(i,mAxisData[i]));
+        }
+
+
+        for (int i = 0; i < personalStepData.size(); i++){
+            personalAxisValues.add(new PointValue(i,personalStepData.get(i)));
+        }
+        Line Maleline = new Line(MalesAxisValues).setColor(Color.parseColor("#ffa500"));
+        Line personalLine = new Line(personalAxisValues).setColor(Color.parseColor("#ff0000"));
+        System.out.println(personalStepData);
+
+        List<Line> lines = new ArrayList<>();
+        lines.add(line);
+        lines.add(Maleline);
+        lines.add(personalLine);
+
+        LineChartData data = new LineChartData();
+        data.setLines(lines);
+
+        Axis axis = new Axis();
+        axis.setValues(axisValues);
+        axis.setTextSize(12);
+        axis.setTextColor(Color.parseColor("#03A9F4"));
+        axis.setName("Age Groups");
+        data.setAxisXBottom(axis);
+
+        Axis yAxis = new Axis();
+
+        yAxis.setName("Average Steps");
+        yAxis.setTextColor(Color.parseColor("#03A9F4"));
+        yAxis.setTextSize(12);
+        data.setAxisYLeft(yAxis);
+
+        lineChartView.setLineChartData(data);
+        Viewport viewport = new Viewport(lineChartView.getMaximumViewport());
+        viewport.top = 7000;
+        lineChartView.setMaximumViewport(viewport);
+        lineChartView.setCurrentViewport(viewport);
+    }
 
     /** Clears all the logging message in the LogView. */
     private void clearLogView() {
