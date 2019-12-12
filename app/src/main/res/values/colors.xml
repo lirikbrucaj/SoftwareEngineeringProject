@@ -3,4 +3,32 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+
+
+    <color name="backgroundColor">#FCFCFC</color>
+    <color name="lightgray">#ededed</color>
+    <color name="deeppurple">#7c4cff</color>
+    <color name="materialpink">#DDFF00DB</color>
+    <color name="materialgreen">#00bfa5</color>
+    <color name="pinkaccent">#ff4081</color>
+    <color name="darkgrey">#635E5E</color>
+    <color name="black">#000000</color>
+    <!--  -->
+
+
+    <color name="bg_login">#AE2626</color>
+    <color name="bg_register">#2e3237</color>
+    <color name="bg_main">#CA4242</color>
+    <color name="white">#ffffff</color>
+    <color name="input_login">#222222</color>
+    <color name="input_login_hint">#999999</color>
+    <color name="input_register">#888888</color>
+    <color name="input_register_bg">#3b4148</color>
+    <color name="input_register_hint">#5e6266</color>
+    <color name="btn_login">#AE2626</color>
+    <color name="btn_login_bg">#eceef1</color>
+    <color name="lbl_name">#333333</color>
+    <color name="btn_logut_bg">#ff6861</color>
+
 </resources>
