@@ -3,8 +3,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -68,6 +70,7 @@ public class ShowActivityData extends AppCompatActivity {
     // Identifier to identify the sign in activity.
     private static final int REQUEST_OAUTH_REQUEST_CODE = 1;
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -94,6 +97,7 @@ public class ShowActivityData extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == Activity.RESULT_OK) {
             if (requestCode == REQUEST_OAUTH_REQUEST_CODE) {
                 insertAndReadData();
@@ -519,6 +523,7 @@ public class ShowActivityData extends AppCompatActivity {
     }
 
     /** Initializes a custom log class that outputs both to in-app targets and logcat. */
+    @RequiresApi(api = Build.VERSION_CODES.M)
     private void initializeLogging() {
         // Wraps Android's native log framework.
         LogWrapper logWrapper = new LogWrapper();
